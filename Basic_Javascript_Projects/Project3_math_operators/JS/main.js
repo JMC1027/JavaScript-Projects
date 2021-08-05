@@ -25,7 +25,7 @@ function modulus_Operator() { //modulus_operater which gives the remainder 0f 28
 
 var x = 50;
 x++
-document.write(x)
+document.write(x + " ")
 
 var z = 41;
 z--
@@ -34,6 +34,5 @@ document.write(z)
 
 
 window.alert(Math.random() * 100);
-
 
 
