@@ -1,19 +1,19 @@
-function Drive_Function() {
+function Drive_Function() { //Ternary operation
     var Drive, Can_drive;
     Age = document.getElementById("Drive").value;
-    Can_Drive = (Age > 17) ? "You are too young":"You are of age";
-    document.getElementById("Drive").innerHTML = Can_drive + " to drive";
+    Can_Drive = (Age >= 17) ? "You are of age":"You are too young";
+    document.getElementById("Can_drive").innerHTML = Can_Drive + " to drive";
 }
-function Continent(Country, State, Town) {
+function Continent(Country, State, Town) { //Constructor function 
     this.Continent_Country = Country;
     this.Continent_State = State;
     this.Continent_Town = Town;
 }
-var Joe = new Continent("America" "New York", "Holbrook");
-function myFunction() {
-    document.getElementById("New_and_This").innerHTML ="Joe lives in " + Joe.Continent_Country + "America " + Joe.Continent_State + "New York " + Joe.Continent_Town;
+var Joe = new Continent("America", "New York", "Holbrook");
+function my_Function() {
+    document.getElementById("New_and_This").innerHTML ="Joe lives in " + Joe.Continent_Country +" " + Joe.Continent_State +" " +  Joe.Continent_Town;
 }
-function count_function() {
+function count_function() { //Nested function, the return value will be 4
     document.getElementById("Counting").innerHTML = Count();
     function Count () {
         var Starting_point = 2;
