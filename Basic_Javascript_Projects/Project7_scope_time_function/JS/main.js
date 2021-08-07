@@ -35,7 +35,5 @@ function addition_Function() {
     var x = 3;
     var addition = x + 2;
     document.getElementById("Math").innerHTML = "x + 2 = " + addition;
-    console.log(addition);
     console.log(5);
-    addition = +*();
 }
