@@ -5,9 +5,9 @@ function placeXOrO(squareNumber) {
     if (!selectedSquares.some(element => element.includes(squareNumber))) {
         let select = document.getElementById(squareNumber);
         if (activePlayer === 'X') {
-            select.style.backgroundImage = 'url("Images/x.png")';
+            select.style.backgroundImage = 'url("Images/ny_isles.jpg")';//these are the new images in place of the X and O
         } else {
-            select.style.backgroundImage = 'url("Images/o.png")';
+            select.style.backgroundImage = 'url("Images/raiders.jpg")';
         }
         selectedSquares.push(squareNumber + activePlayer);
         checkWinConditions();
@@ -16,7 +16,7 @@ function placeXOrO(squareNumber) {
         } else {
             activePlayer = 'X';
         }
-        Audio("Media/place.mp3");
+        audio("Media/place.mp3");
         if(activePlayer === 'O') {
             disableClick();
             setTimeout(function (){ computersTurn(); }, 1000)
@@ -36,7 +36,7 @@ function placeXOrO(squareNumber) {
     }
 }
 
-function checkWinConditions () {
+function checkWinConditions () { //Looks for all possible outcomes of wins
     if  (arrayIncludes('OX', '1X', '2X')) { drawWinLine(50, 100, 558, 100) }
     else if (arrayIncludes('3X', '4X', '5X')) { drawWinLine(50, 304, 558, 304) }
     else if (arrayIncludes('6X', '7X', '8X')) { drawWinLine(50, 508, 558, 508) }
@@ -54,7 +54,7 @@ function checkWinConditions () {
     else if (arrayIncludes('6O', '4O', '2O')) { drawWinLine(100, 508, 510, 90) }
     else if (arrayIncludes('0O', '4O', '8O')) { drawWinLine(100, 100, 520, 520) }
     else if (selectedSquares.length >= 9) {
-        audio('./media/tie.mp3');
+        audio("Media/tie.mp3");
         setTimeout(function () { resetGame(); }, 1000);
     }
     function arrayIncludes(squareA, squareB, squareC) {
@@ -66,24 +66,24 @@ function checkWinConditions () {
     
 }
 
-function disableClick() {
+function disableClick() { //locks the user from playing more than one move until the computer plays its turn
     body.style.pointerEvents = 'none';
     setTimeout(function() {body.style.pointerEvents = 'auto';}, 1000);
 }
 
-function audio(audioURL) { //Figure out audio URL
+function audio(audioURL) { //sets the audio for when a square is picked, and when a player has won
     let audio = new Audio(audioURL);
     audio.play();
 }
 
-function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
+function drawWinLine(coordX1, coordY1, coordX2, coordY2) { //function for drawing a line through the winning move
     const canvas = document.getElementById('win-lines')
     const c = canvas.getContext('2d');
-    let xl = coordX1,
+    let x1 = coordX1,
     y1 = coordY1,
     x2 = coordX2,
     y2 = coordY2,
-    x= x1,
+    x = x1,
     y = y1;
     function animateLineDrawing() {
         const animationLoop = requestAnimationFrame(animateLineDrawing);
@@ -114,7 +114,15 @@ function clear() {
 }
 
 disableClick();
-audio('./media/winGame.mp3');
+audio("Media/winGame.mp3");
 animateLineDrawing();
-setTimeout(function () { clear(); resetGame(); }, 1000);
+setTimeout(function  () { clear(); resetGame(); }, 1000);
+}
+
+function resetGame() { //resets game in event of tie or win
+    for (let i = 0; i < 9; i++) {
+        let square = document.getElementById(String(i))
+        square.style.backgroundImage = ''
+    }
+    selectedSquares = [];
 }
