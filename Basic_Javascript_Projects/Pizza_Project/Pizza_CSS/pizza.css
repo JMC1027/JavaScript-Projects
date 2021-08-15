@@ -50,7 +50,9 @@ div.menu-right {
     width:200px;
     height:200px;
     float:right;
-    margin: top;
+    position: fixed;
+    top: auto;
+    left: 420px;
 }
 
 div.menu-center {
