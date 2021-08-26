@@ -1,3 +1,3 @@
 # JavaScript Projects
 
- [Tic Tac Toe] 
+Here are some of my projects 
