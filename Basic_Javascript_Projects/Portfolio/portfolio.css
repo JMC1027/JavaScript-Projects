@@ -1,0 +1,433 @@
+/***** GENERAL STYLING *****/
+/* Body */
+body {
+    margin: 0%  
+}
+
+/* Heading 1 elements */
+h1 {
+    text-transform: uppercase; 
+    font-family: "Trebuchet MS", Optima; 
+    text-align: center; 
+    margin-top: 3%; 
+}
+
+/* Heading 1 element hover effect */
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1); 
+    transition: transform 1s; 
+}
+
+/* Styling for portfolio title text */
+.white-text {
+    color: #fff; 
+}
+
+/* Paragraph elements */
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify; 
+    letter-spacing: 1px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+/* Paragraph element hover effect */
+p:hover {
+    transition: transform 1s;
+	transform: scale(1.01); 
+}
+
+/* Center class - this applies to all elements with the class "center" */
+.center {
+    text-align: center; 
+}
+
+/* Center class hover effect - This only affects the quote, github link, and footer */
+.center:hover {
+    transition: transform 2s; 
+    transform: scale(1.1); 
+}
+
+/* Anchor elements */
+a {
+    color: blue; 
+}
+
+/* Quotation elements */
+q {
+    font-style: italic; 
+}
+
+/* Image elements */
+img {
+    filter: grayscale(75%); 
+    border-radius: 8px; 
+    max-width: 100%; 
+    height: 100%; 
+    display: block; 
+    margin: auto auto auto auto;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+
+footer {
+    padding: 2%; 
+    background-color: white;
+}
+/***** END OF GENERAL STYLING *****/
+
+/***** NAVBAR STYLING *****/
+.Navbar {
+    overflow: hidden; 
+    background-color: black; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    z-index: 1; 
+    -webkit-animation: moveNav 5s; 
+    animation: moveNav 5s; 
+}
+
+/* moveNav animation effect for moving the nav bar in from the left of the screen */
+@keyframes moveNav {
+    from {left: -100vw;} 
+    to {left: 0vw;} 
+}
+
+/* Navbar links */
+.Navbar a {
+    float: left; 
+    display: block; 
+    color: white; 
+    padding: 14px 16px; 
+    text-decoration: none; 
+    font-family: Avant Garde, Helvetica; 
+    font-size: 20px; 
+    text-align: center; 
+    position: relative;
+    -webkit-animation: moveNavText 5.75s; 
+    animation: moveNavText 5.75s; 
+}
+
+
+@keyframes moveNavText {
+    from {top: -100vw;} 
+    to {top: 0vw;} 
+}
+
+
+@media screen and (max-width: 576px) {
+    .Navbar a{
+        width: 25%; 
+        font-size: 12px;
+    }
+}
+
+/* Navbar hover effects */
+.Navbar a:hover {
+    background-color: #f4f4f4; 
+    color: black; 
+    font-weight: bold; 
+}
+
+/* Navbar home button */
+.Navbar a.active { 
+    background-color: darkgray;
+}
+/***** END OF NAVBAR STYLING *****/
+
+/***** VIDEO STYLING *****/
+/* Formatting for background video */
+#Typing_Video {
+    position: fixed; 
+    right: 0; 
+    bottom: 0; 
+    min-width: 100%; 
+    z-index: -1; 
+}
+
+
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+
+/* Texts over the video */
+.Video_Text {
+    background: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    width: 100%; 
+    padding: 20px; 
+    position: relative; 
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+}
+
+
+@keyframes moveVideoText {
+    from {top: -100vw;} 
+    to {top: 0vw;} 
+}
+/***** END OF VIDEO STYLING *****/
+
+/***** Slideshow Styling *****/
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);    
+}
+
+.mySlides{
+    display: none; 
+}
+
+/* Slideshow section / container */
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto; 
+    padding-top: 4%; 
+    position: relative; 
+    margin:auto; 
+}
+
+/* Images contained within the slideshow */
+.Slideshow_Images {
+    vertical-align: middle; 
+    height: auto; 
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75); 
+    width: 100%; 
+}
+
+/* Next and previous buttons */
+.Previous, .Next {
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    width: auto; 
+    padding: 2vw; 
+    color: darkgray; 
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0; 
+    user-select: none; 
+    transition: 0.6s ease; 
+}
+
+/* Positioning the next button on the right hand side */
+.Next {
+    right: 0; 
+    border-radius: 3px 0 0 3px; 
+}
+
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+}
+
+/* Slideshow text */
+.text {
+    color: white; 
+    padding: 1vw;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    text-align: center; 
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw; 
+    background-color: rgba(0, 0, 0, 0.75); 
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px; 
+}
+
+/* Styling of the dots under the slideshow */
+.dot {
+    cursor: pointer; 
+    height: 1vw; 
+    width: 1vw;
+    margin: .25vw; 
+    background-color: white; 
+    border-radius: 50%; 
+    display: inline-block; 
+    transition: background-color 0.6s ease; 
+    z-index: 1; 
+}
+
+/* Hover effect for slideshow dots */
+.active, .dot:hover {
+    background-color: black; 
+}
+
+/* Fading animation for slideshow */
+.fade {
+    animation-name: fade; 
+    animation-duration: 1.5s; 
+    -webkit-animation-name: fade; 
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+
+@keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+/***** End Slideshow Styling *****/
+
+
+/***** TABLE STYLING -  this section covers the styling of the columns and rows within the table *****/
+* { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+    box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+} 
+
+.Column_1 {
+    float: left;
+    width: 50%; 
+    padding: 10px;
+    padding-top: 3%; 
+    height: 400px; 
+    background-color: #f2f2f2; 
+}
+
+
+@media screen and (max-width: 576px) {
+    .Column_1 {
+        overflow: auto;
+    }
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    height: 400px;
+    background-color: #4d4d4d;
+}
+
+
+.Column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+
+.Row:after {
+	content: ""; 
+	display: table; 
+	clear: both; 
+}
+/***** END OF TABLE STYLING *****/
+
+
+/***** Contact Form Styling *****/
+/* Button used to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+    position: fixed; /* The element is positioned relative to the viewport and stays in the same location no matter what */
+    bottom: 1.75vw; /* Positions the button slightly up from the bottom of the viewport */
+    right: 1.75vw; /* Positions the viewport slightly right from the side of the viewport */
+    width: 25vw; /* Sets the width relative to the viewport width */
+    background-color: grey; /* Sets the background color of the button to white */
+    color: rgb(255, 251, 251); /* Sets the color of the button text to black */
+    border: solid black; /* This makes a solid black border around the button */
+    cursor: pointer; /* This changes the cursor when hovered over the button to a pointer */
+    -webkit-animation: movePopup 5s; /* Animation for 5 seconds for Safari 4.0-8.0 */
+    animation: movePopup 5s; /* Animation set for 5 seconds */
+}
+
+/* movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport */
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+/* Styling for the contact form */
+.form-popup {
+    border: 3px solid #f0f1f0; /* Creates a solid light gray border around the contact form */
+    z-index: 8; /* This z-index ensures the contact form shows above all other elements on the page */
+    display: none; /* Set the display to none, we will use JavaScript to show the contact form */
+    position: fixed; /* The form stays in the same location no matter what */
+    bottom: .5vw; /* Slightly up from the bottom of the viewport */
+    right: .5vw; /* Slightly in from the right side of the viewport */
+}
+
+/* Form styling */
+.form-container {
+    max-width: 49vw; /* Relative sizing of the form container - 49% of the viewport width */
+    padding: 1vw; /* Adds padding between the form-popup and the form-container */
+    background-color: white; 
+}
+
+/* Input fields */
+.form-container input[type=text] {
+    width: 100%; /* The input boxes completely fill the width of the form-container */
+    padding: .93vw; /* Adds padding to the input boxes */
+    margin: .6vw 0 .6vw 0; /* Adds space between the input boxes and the labels */
+    border: none; /* Removes the border from the input boxes */
+    background: Gainsboro; /* Sets the background color of the input boxes */
+    font-size: 1vw; /* Relative font sizing based on the width of the viewport */
+}
+
+/* General styling for all buttons */
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw; /* Adds slight spacing between the letters */
+    font-size: 1.5vw; /* Relative sizing of text */
+    font-weight: bold; 
+    padding: 1.5vw; /* Adds padding to the text in the button */
+    cursor: pointer; /* Changes the cursor to pointer over button elements */
+    width: 100%; /* Sets the width of the buttons to 100% of their containers */
+    height: auto; /* Allows the height to be resized depending on the content showing */
+}
+
+/* Hover effect for contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white; /* This makes the text in the buttons white when hovered over */
+    background-color: black; /* The background of the button changes to black when hovered over */
+    transition-duration: 1s; /* This makes the transition last 1 second */
+    -webkit-transition-duration: 1s; /* For Safari 4.0-8.0 */
+    border-color: silver; /* The border turns silver when the button is hovered over */
+}
+
+/* Submit button */
+.form-container .btn {
+    background-color: white; 
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh; /* Adds space between the submit button and the close button */
+}
+
+/* Close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/* Styling for close button on hover */
+.form-container .cancel:hover {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+/***** End of Contact Form Styling *****/

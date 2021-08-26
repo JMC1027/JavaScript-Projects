@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/todo.css">
+        <title>My todo JMC</title>
+        
+    </head>
+    <body>
+        <input id="task"><button id="add">Add Item</button>
+        <hr>
+        <div id="todos"></div>
+        <p id="Favorite Team"></p>
+        <script>
+            var team = '{name:"Islanders", "division":"Metro", "color": "Orange"}';
+            var JSONstring = JSON.parse(team);
+            document.getElementById("Favorite Team").innerHTML = JSONstring.name + " the team of the " + JSONstring.division;
+        </script>
+
+        <script src="js/todo.js"></script>
+
+        <div class="footer">
+            www.JMCTodo.com &nbsp; &nbsp; &copy; 2021
+        </div>
+    </body>
+</html>
