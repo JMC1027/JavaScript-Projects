@@ -1,0 +1,34 @@
+/* This container includes our table and our canvas. */
+.center-container {
+    width: 608px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+td {
+    cursor: pointer;
+    border: 4px solid rgba(241, 15, 15, 0.8);
+    padding: 0px;
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+canvas {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
